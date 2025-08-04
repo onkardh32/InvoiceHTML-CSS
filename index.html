@@ -10,12 +10,15 @@
         <div class="invoice-container">
             <!-- Header -->
             <div class="header">
+                <div class="tax-invoice-badge2">
+                    <strong style="font-size: 25px">M</strong>EC
+                </div>
                 <div class="tax-invoice-badge">TAX INVOICE</div>
                 <h1>MAHAKALI ETHNIC COLLECTION</h1>
                 <div class="header-info">
                     📍 Shop No. 23, Ground Floor, Ring Road | 📞 +91-9876543210
                     | 📧 mahakali@gmail.com<br />
-                    GSTIN: 23AABCS1234L1ZS
+                    <b> GSTIN: 23AABCS1234L1ZS</b>
                 </div>
             </div>
 
@@ -27,7 +30,7 @@
                 </div>
                 <div style="text-align: center">
                     <strong>Place of Supply:</strong> Madhya Pradesh (23)<br />
-                    <strong>Reverse Charge:</strong> N
+                    <strong class="rev-change">Reverse Charge:</strong> N
                 </div>
             </div>
 
@@ -35,15 +38,25 @@
             <div class="billing-section">
                 <div class="bill-to">
                     <h3>Billed To:</h3>
-                    Fashion Boutique<br />
+                    <p style="font-weight: bold; font-size: 15px">
+                        Fashion Paradise
+                    </p>
+                    <br />
                     32, New Market, Bhopal, MP - 462001<br /><br />
-                    GSTIN / UIN : 23AABCF6798H1Z7
+                    <p style="font-weight: 600; color: #777">
+                        GSTIN / UIN : 23AABCF6798H1Z7
+                    </p>
                 </div>
                 <div class="ship-to">
                     <h3>Shipped To:</h3>
-                    Fashion Boutique<br />
+                    <p style="font-weight: bold; font-size: 15px">
+                        Fashion Paradise
+                    </p>
+                    <br />
                     32, New Market, Bhopal, MP - 462001<br /><br />
-                    GSTIN / UIN : 23AABCF6798H1Z7
+                    <p style="font-weight: 600; color: #777">
+                        GSTIN / UIN : 23AABCF6798H1Z7
+                    </p>
                 </div>
             </div>
 
@@ -153,6 +166,10 @@
                             <td></td>
                             <td>0.08</td>
                         </tr>
+                        <tr class="gtotal">
+                            <td colspan="4">Grand Total</td>
+                            <td>148690.00 ₹</td>
+                        </tr>
                     </table>
                 </div>
                 <div class="tax-summary">
@@ -172,66 +189,91 @@
                             <td>7965.54</td>
                             <td>15931.08</td>
                         </tr>
+                        <tr>
+                            <!-- Bank Details Column -->
+                            <td
+                                style="
+                                    vertical-align: top;
+                                    padding: 10px;
+                                    width: 60%;
+                                "
+                                colspan="4"
+                            >
+                                <strong class="bank-labels bnk"
+                                    >🏦Bank Details</strong
+                                ><br />
+                                <strong class="bank-labels">Name :</strong>
+                                MAHAKALI ETHNIC COLLECTION<br />
+                                <strong class="bank-labels">A/c:</strong>
+                                1234567890123456<br />
+                                <strong class="bank-labels">Bank:</strong> State
+                                Bank of India<br />
+                                <strong class="bank-labels"> Branch:</strong>
+                                M.G. Road, Indore<br />
+                                <strong class="bank-labels">IFSC:</strong>
+                                SBIN0001234
+                            </td>
+
+                            <!-- QR Code Column -->
+                            <td
+                                style="
+                                    vertical-align: top;
+                                    text-align: center;
+                                    padding: 10px;
+                                    width: 40%;
+                                "
+                            >
+                                <div>
+                                    <img
+                                        src="Qr.png"
+                                        alt="QR code"
+                                        style="width: 120px; height: 120px"
+                                    />
+                                    <p style="margin: 5px 0">
+                                        Scan to pay via UPI
+                                    </p>
+                                    <small>mahakali.ethinic@upi</small>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
-                </div>
-            </div>
-
-            <!-- Grand Total -->
-            <div class="grand-total">
-                Grand Total: <span class="rupee">₹ 148690.00</span>
-            </div>
-
-            <div
-                style="text-align: center; font-size: 11px; margin-bottom: 20px"
-            >
-                <em
-                    >Rupees One Lakh Forty Eight Thousand Six Hundred Ninety
-                    Only</em
-                >
-            </div>
-
-            <!-- Bank Details and QR -->
-            <div class="bottom-section">
-                <div class="bank-details">
-                    <strong>Bank Details</strong><br />
-                    Name: MAHAKALI ETHNIC COLLECTION<br />
-                    A/c: 1234567890123456<br />
-                    Bank: State Bank of India<br />
-                    Branch: M.G. Road, Indore<br />
-                    IFSC: SBIN0001234
-                </div>
-                <div class="qr-section">
-                    <div class="qr-code">
-                        <div><img src="Qr.png" alt="Qr code" class="qr" /></div>
-                        <br />
-                    </div>
-                    <p>Scan for payment</p>
-                    <small>mahakali@ethinic</small>
                 </div>
             </div>
 
             <!-- Terms and Signature -->
             <div class="terms-signature">
                 <div class="terms">
-                    <strong>Terms & Conditions:</strong><br />
-                    1. E. & O.E.<br />
-                    2. Goods once sold will not be taken back.<br />
-                    3. Interest @ 18% p.a. will be charged if the payment is not
-                    made within the stipulated time.<br />
-                    4. All disputes are subject to Indore, Madhya Pradesh
-                    jurisdiction.<br />
-                    5. Returns accepted only within 7 days of delivery with
-                    original packaging.
+                    <h1>Terms & Conditions:</h1>
+                    <ol>
+                        <li>E. & O.E.</li>
+                        <li>Goods once sold will not be taken back.</li>
+                        <li>
+                            Interest @ 18% p.a. will be charged if the payment
+                            is not made within the stipulated time.
+                        </li>
+                        <li>
+                            All disputes are subject to Indore, Madhya Pradesh
+                            jurisdiction.
+                        </li>
+                        <li>
+                            Returns accepted only within 7 days of delivery with
+                            original packaging.
+                        </li>
+                    </ol>
                 </div>
                 <div class="signature">
-                    <strong>Receiver's Signature</strong><br /><br />
-                    <em
-                        >I/We hereby confirm that I/we have received the goods
-                        as per the invoice.</em
-                    ><br /><br />
-                    <strong>For MAHAKALI ETHNIC COLLECTION</strong><br /><br />
+                    <h1 style="color: rgb(43 87 132)">Receiver's Signature</h1>
+                    <br /><br />
+                    <hr class="line" />
+                    <p class="tc-sign">
+                        I / We hereby confirm that I/we have received the goods
+                        as per the invoice.
+                    </p>
+
+                    <p class="mx-text">For MAHAKALI ETHNIC COLLECTION</p>
+                    <br /><br />
                     <div class="signature-box"></div>
-                    <strong>Authorized Signatory</strong>
+                    <p class="auth-text">Authorized Signatory</p>
                 </div>
             </div>
 
