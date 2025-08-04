@@ -7,56 +7,67 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <button class="print-button" onclick="window.print()">🖨️ Print</button>
+
         <div class="invoice-container">
             <!-- Header -->
-            <div class="header">
-                <div class="tax-invoice-badge2">
-                    <strong style="font-size: 25px">M</strong>EC
+            <div class="invoice-header">
+                <div class="tax-invoice-badge">
+                    <div class="badge-logo">M<sup>EC</sup></div>
+                    <div class="badge-text">TAX INVOICE</div>
                 </div>
-                <div class="tax-invoice-badge">TAX INVOICE</div>
-                <h1>MAHAKALI ETHNIC COLLECTION</h1>
-                <div class="header-info">
-                    📍 Shop No. 23, Ground Floor, Ring Road | 📞 +91-9876543210
-                    | 📧 mahakali@gmail.com<br />
-                    <b> GSTIN: 23AABCS1234L1ZS</b>
-                </div>
-            </div>
-
-            <!-- Invoice Details -->
-            <div class="invoice-details">
-                <div>
-                    <strong>Invoice No.:</strong> MH/2023-24/256<br />
-                    <strong>Dated:</strong> 15-09-2023
-                </div>
-                <div style="text-align: center">
-                    <strong>Place of Supply:</strong> Madhya Pradesh (23)<br />
-                    <strong class="rev-change">Reverse Charge:</strong> N
+                <div class="company-info">
+                    <div class="company-name">MAHAKALI ETHNIC COLLECTION</div>
+                    <div class="company-details">
+                        📍 Shop No. 25, Indore, MP - 452001 &nbsp;&nbsp; 📞
+                        9845453410 &nbsp;&nbsp; ✉ abc@gmail.com
+                    </div>
+                    <div class="gstin">GSTIN: 23AABCF7621R1Z7</div>
                 </div>
             </div>
 
-            <!-- Billing Section -->
-            <div class="billing-section">
-                <div class="bill-to">
-                    <h3>Billed To:</h3>
-                    <p style="font-weight: bold; font-size: 15px">
-                        Fashion Paradise
-                    </p>
-                    <br />
-                    32, New Market, Bhopal, MP - 462001<br /><br />
-                    <p style="font-weight: 600; color: #777">
-                        GSTIN / UIN : 23AABCF6798H1Z7
-                    </p>
+            <!-- Invoice Meta Information -->
+            <div class="invoice-meta">
+                <div class="invoice-meta-left">
+                    <div class="invoice-meta-item">
+                        <strong>Invoice No.</strong>
+                        : ME/2023-24/256
+                    </div>
+                    <div class="invoice-meta-item">
+                        <strong>Dated</strong> : 15-09-2023
+                    </div>
                 </div>
-                <div class="ship-to">
-                    <h3>Shipped To:</h3>
-                    <p style="font-weight: bold; font-size: 15px">
-                        Fashion Paradise
-                    </p>
-                    <br />
-                    32, New Market, Bhopal, MP - 462001<br /><br />
-                    <p style="font-weight: 600; color: #777">
-                        GSTIN / UIN : 23AABCF6798H1Z7
-                    </p>
+                <div class="invoice-meta-right">
+                    <div class="invoice-meta-item">
+                        <strong>Place of Supply</strong> : Madhya Pradesh (23)
+                    </div>
+                    <div class="invoice-meta-item">
+                        <strong>Reverse Charge</strong> : N
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing and Shipping Information -->
+            <div class="billing-shipping">
+                <div class="billing-info">
+                    <div class="section-label">Billed to:</div>
+                    <div class="address-info">
+                        <div class="customer-name">Fashion Paradise</div>
+                        <div>32, New Market, Bhopal, MP - 462001</div>
+                        <div class="gstin-line">
+                            GSTIN / UIN : 23AABCF7621R1Z7
+                        </div>
+                    </div>
+                </div>
+                <div class="shipping-info">
+                    <div class="section-label">Shipped to:</div>
+                    <div class="address-info">
+                        <div class="customer-name">Fashion Paradise</div>
+                        <div>32, New Market, Bhopal, MP - 462001</div>
+                        <div class="gstin-line">
+                            GSTIN / UIN : 23AABCF7621R1Z7
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -68,7 +79,7 @@
                         <th>DESCRIPTION OF GOODS</th>
                         <th>SIZE</th>
                         <th>HSN/SAC</th>
-                        <th>QTY</th>
+                        <th>QTY.</th>
                         <th>UNIT</th>
                         <th>PRICE</th>
                         <th>AMOUNT(₹)</th>
@@ -77,7 +88,7 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Maharashtrian Embroidered Saree Suit (Pink)</td>
+                        <td>Chikankari Embroidered Salwar Suit (Pink)</td>
                         <td>S, M, L, XL</td>
                         <td>6204</td>
                         <td>24.00</td>
@@ -125,9 +136,13 @@
                         <td>999.00</td>
                         <td>29970.00</td>
                     </tr>
-                    <tr>
-                        <td colspan="6"></td>
-                        <td><strong>Total</strong></td>
+                    <tr class="total-row" id="total-spl">
+                        <td colspan="4" id="total-td">
+                            <strong>Total</strong>
+                        </td>
+                        <td><strong>90.00</strong></td>
+                        <td><strong>PCS</strong></td>
+                        <td></td>
                         <td><strong>147510.00</strong></td>
                     </tr>
                 </tbody>
@@ -135,125 +150,130 @@
 
             <!-- Summary Section -->
             <div class="summary-section">
-                <div class="invoice-summary">
-                    <div class="summary-header">Invoice Summary</div>
-                    <table class="summary-table">
-                        <tr>
-                            <td>Less</td>
-                            <td>Discount</td>
-                            <td>%</td>
-                            <td>10 %</td>
-                            <td>14751.00</td>
-                        </tr>
-                        <tr>
-                            <td>Add</td>
-                            <td>SGST</td>
-                            <td>%</td>
-                            <td>9.00 %</td>
-                            <td>7965.54</td>
-                        </tr>
-                        <tr>
-                            <td>Add</td>
-                            <td>CGST</td>
-                            <td>%</td>
-                            <td>9.00 %</td>
-                            <td>7965.54</td>
-                        </tr>
-                        <tr>
-                            <td>Less</td>
-                            <td>Rounded Off</td>
-                            <td></td>
-                            <td></td>
-                            <td>0.08</td>
-                        </tr>
-                        <tr class="gtotal">
-                            <td colspan="4">Grand Total</td>
-                            <td>148690.00 ₹</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="tax-summary">
-                    <div class="summary-header">Tax Summary</div>
-                    <table class="summary-table">
-                        <tr>
-                            <td>Tax Rate</td>
-                            <td>Taxable</td>
-                            <td>SGST</td>
-                            <td>CGST</td>
-                            <td>Total</td>
-                        </tr>
-                        <tr>
-                            <td>18%</td>
-                            <td>132759.00</td>
-                            <td>7965.54</td>
-                            <td>7965.54</td>
-                            <td>15931.08</td>
-                        </tr>
-                        <tr>
-                            <!-- Bank Details Column -->
-                            <td
-                                style="
-                                    vertical-align: top;
-                                    padding: 10px;
-                                    width: 60%;
-                                "
-                                colspan="4"
-                            >
-                                <strong class="bank-labels bnk"
-                                    >🏦Bank Details</strong
-                                ><br />
-                                <strong class="bank-labels">Name :</strong>
-                                MAHAKALI ETHNIC COLLECTION<br />
-                                <strong class="bank-labels">A/c:</strong>
-                                1234567890123456<br />
-                                <strong class="bank-labels">Bank:</strong> State
-                                Bank of India<br />
-                                <strong class="bank-labels"> Branch:</strong>
-                                M.G. Road, Indore<br />
-                                <strong class="bank-labels">IFSC:</strong>
-                                SBIN0001234
-                            </td>
-
-                            <!-- QR Code Column -->
-                            <td
-                                style="
-                                    vertical-align: top;
-                                    text-align: center;
-                                    padding: 10px;
-                                    width: 40%;
-                                "
-                            >
-                                <div>
-                                    <img
-                                        src="Qr.png"
-                                        alt="QR code"
-                                        style="width: 120px; height: 120px"
-                                    />
-                                    <p style="margin: 5px 0">
-                                        Scan to pay via UPI
-                                    </p>
-                                    <small>mahakali.ethinic@upi</small>
+                <div class="left-summary">
+                    <div class="invoice-summary">
+                        <div class="summary-header">Invoice Summary</div>
+                        <div class="summary-content">
+                            <div class="summary-row">
+                                <span
+                                    ><strong style="color: #0e355a"
+                                        >Less</strong
+                                    >
+                                    : Discount @ 10%</span
+                                >
+                                <span>14751.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span
+                                    ><strong style="color: #0e355a">Add</strong>
+                                    : SGST @ 6.000%</span
+                                >
+                                <span>7965.54</span>
+                            </div>
+                            <div class="summary-row">
+                                <span
+                                    ><strong style="color: #0e355a">Add</strong>
+                                    : CGST    @       6.000%</span
+                                >
+                                <span>7965.54</span>
+                            </div>
+                            <div class="summary-row">
+                                <span
+                                    ><strong style="color: #0e355a"
+                                        >Less</strong
+                                    >
+                                    : Rounded Off (-)</span
+                                >
+                                <span>0.08</span>
+                            </div>
+                            <div class="grand-total-section">
+                                <div class="grand-total">
+                                    <span><strong>Grand Total</strong></span>
+                                    <span><strong>₹ 148690.00</strong></span>
                                 </div>
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amount-words">
+                        Rupees One Lakh Forty Eight Thousand Six Hundred Ninety
+                        Only
+                    </div>
+                </div>
+
+                <div class="right-summary">
+                    <div class="tax-summary">
+                        <div class="summary-header">Tax Summary</div>
+                        <div class="summary-content">
+                            <table class="tax-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tax Rate</th>
+                                        <th>Taxable</th>
+                                        <th>CGST</th>
+                                        <th>SGST</th>
+                                        <th>Total Tax</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>12%</td>
+                                        <td>132759.00</td>
+                                        <td>7965.54</td>
+                                        <td>7965.54</td>
+                                        <td>15931.08</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bank-qr-container">
+                        <div class="bank-details">
+                            <div class="bank-details-header">
+                                🏦 Bank Details
+                            </div>
+                            <div>
+                                <strong>Name:</strong> MAHAKALI ETHNIC
+                                COLLECTION
+                            </div>
+                            <div><strong>A/C:</strong> 1234567890123456</div>
+                            <div><strong>IFSC:</strong> SBIN0012345</div>
+                            <div>
+                                <strong>Bank:</strong> State Bank of India
+                            </div>
+                            <div>
+                                <strong>Branch:</strong> M.G. Road, Indore
+                            </div>
+                        </div>
+                        <div class="qr-section">
+                            <div class="qr-code">
+                                <img src="Qr.png" alt="qr img" /
+                                class="qr-code">
+                            </div>
+                            <div class="qr-text">
+                                🔗 Scan to pay via UPI<br />
+                                mahakali.ethnic@upi
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Terms and Signature -->
-            <div class="terms-signature">
-                <div class="terms">
-                    <h1>Terms & Conditions:</h1>
-                    <ol>
-                        <li>E. & O.E.</li>
+            <!-- Footer Section -->
+            <div class="footer-section">
+                <div class="terms-conditions">
+                    <h4>Terms & Conditions:</h4>
+                    <ol class="terms-list">
+                        <li>E & O.E.</li>
                         <li>Goods once sold will not be taken back.</li>
                         <li>
                             Interest @ 18% p.a. will be charged if the payment
                             is not made within the stipulated time.
                         </li>
                         <li>
-                            All disputes are subject to Indore, Madhya Pradesh
-                            jurisdiction.
+                            All disputes are subject to 'Indore, Madhya Pradesh'
+                            Jurisdiction only.
                         </li>
                         <li>
                             Returns accepted only within 7 days of delivery with
@@ -261,25 +281,22 @@
                         </li>
                     </ol>
                 </div>
-                <div class="signature">
-                    <h1 style="color: rgb(43 87 132)">Receiver's Signature</h1>
-                    <br /><br />
-                    <hr class="line" />
-                    <p class="tc-sign">
-                        I / We hereby confirm that I/we have received the goods
-                        as per the invoice.
-                    </p>
+                <div class="signature-section">
+                    <h4 class="sign">Receiver's Signature:</h4>
 
-                    <p class="mx-text">For MAHAKALI ETHNIC COLLECTION</p>
-                    <br /><br />
-                    <div class="signature-box"></div>
-                    <p class="auth-text">Authorized Signatory</p>
+                    <hr />
+                    <div class="signature-content">
+                        <div class="signature-text">
+                            I/We hereby confirm that I/we have received the
+                            goods as per the invoice.
+                        </div>
+                        <div class="company-signature">
+                            For MAHAKALI ETHNIC COLLECTION
+                        </div>
+                        <div class="authorized-sign">Authorized-signatory</div>
+                    </div>
                 </div>
             </div>
-
-            <button class="print-button" onclick="window.print()">
-                Print Invoice
-            </button>
         </div>
     </body>
 </html>
